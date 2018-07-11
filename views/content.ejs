@@ -39,11 +39,24 @@
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
-        <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
-        <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>">
+
+
+        <!-- 위아래 교체 -->
+        <!-- <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div> -->
+        <div id="bottom-usage" class="flex"><span id="occupied-toilet">3</span>/<span id="total-toilet">3</span></div>
+        
+        <!-- 위 아래 교체 -->
+        <!-- <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>"> -->
+        <div id="disabled" class="flex">
+        
+        
             <img id="disabled-icon" src="../public/images/wheelchair.svg" alt="장애인">
         </div>
-        <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "light" %>">
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "light" %>"> -->
+        <div id="baby" class="flex">
+
             <img id="baby-icon" src="../public/images/baby.svg" alt="아기 거치대">
         </div>
         <div class="empty"></div>
@@ -59,7 +72,9 @@
 
 
     <nav id="tags">
-        <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %>">
+
+        <!-- 주석 해제 요망 -->
+        <!-- <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %>">
             <div class="floor flex">
                 <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
             </div>
@@ -71,7 +86,7 @@
             <div class="empty"></div>
 
             </div>
-        </div>
+        </div> -->
         
 
         <div class="tag">

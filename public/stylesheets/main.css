@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
 :root {
 	--tag-height: 90px;
-	--bottom-content-height: 120px;
+	--bottom-content-height: 85px;
 }
 
 
@@ -13,6 +14,7 @@ body {
 	text-align: center;
 	background: #484848;
     color: #e6e6d8;
+    font-family: 'Jua', sans-serif;
 }
 
 
@@ -254,9 +256,10 @@ h3:after {
     display: grid;
     grid: "g e1 e1 e1"
 		  "g  u  d  b"
+          "g  u  d  b"
           "g e2 e2 e2";
-    grid-template-columns: var(--bottom-content-height) 1fr 1fr 1fr;
-	grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: calc(var(--bottom-content-height) - 20px) 1fr 1fr 1fr;
+	grid-template-rows: 1fr 2fr 2fr 1fr;
 	width: 100%;
 	height: var(--bottom-content-height);
 	background-color: #e6e6d8;
@@ -264,12 +267,10 @@ h3:after {
 }
 #gender {
     grid-area: g;
-	width: var(--bottom-content-height);
     height: 100%;
     box-shadow: 1px 0 10px rgba(0, 0, 0, .5);
 }
 .gender-icon {
-    width: 80%;
     height: 80%;
 }
 #bottom-usage {
@@ -278,16 +279,16 @@ h3:after {
 	font-size: calc(var(--tag-height) * 4 / 10);
 }
 #disabled {
-	grid-area: d;
+    grid-area: d;
 }
 #disabled-icon {
-    width: 80%;
+    width: calc(var(--bottom-content-height) / 3);
 }
 #baby {
 	grid-area: b;
 }
 #baby-icon {
-    width: 80%;
+    width: calc(var(--bottom-content-height) / 3);
 }
 
 
@@ -296,7 +297,7 @@ h3:after {
 /* 태그들 */
 #tags {
     overflow: hidden;
-	margin: 20px 0 188px;
+	margin: 20px 0 calc(var(--bottom-content-height) + 12px + 56px);
 }
 .tag {
 	display: grid;
@@ -314,7 +315,8 @@ h3:after {
 }
 
 .floor {
-	grid-area: f;
+    grid-area: f;
+    border-radius: 20%;
 	font-size: calc(var(--tag-height) * 7 / 10);
 	/* font-weight: bold; */
 	color: #484848;
@@ -337,7 +339,9 @@ h3:after {
 	color: #484848;
 	background-color: #e6e6d8;
 	box-sizing: border-box;
-	border-right: 10px dashed #484848;
+    /* border-right: 10px dashed #484848; */
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 
