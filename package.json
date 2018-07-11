@@ -1,0 +1,32 @@
+{
+  "name": "the_blank",
+  "version": "1.0.0",
+  "description": "KOI Competition",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingSlaves/The_Blank.git"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "logpacket/naruteride",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingSlaves/The_Blank/issues"
+  },
+  "homepage": "https://github.com/CodingSlaves/The_Blank#readme",
+  "dependencies": {
+    "install": "^0.12.1",
+    "koa": "^2.5.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "logger": "0.0.1",
+    "npm": "^6.1.0"
+  }
+}

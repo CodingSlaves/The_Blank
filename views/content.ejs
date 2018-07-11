@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>빈칸</title>
+
+    <!-- CSS 경로 -->
+    <link rel="stylesheet" href="../public/stylesheets/main.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+
+
+
+    <!-- JS 경로 -->
+    <script src="../public/scripts/main.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+
+
+
+</head>
+<body>
+    <header id="header" class="flex">
+        <!-- 여기에 사용자가 검색한 장소가 나옴 -->
+        <%= building.name %>
+    </header>
+
+    <!-- 변환 아이콘 -->
+    <button id="change-button" class="flex">
+        <img id="change-icon" src="../public/images/gender-transformation.svg">
+    </button>
+
+    <!-- 내용 정보 -->
+    <div id="bottom-content">
+        <div id="gender" class="flex">
+            <img id="man" class="gender-icon" src="../public/images/man.svg" alt="남자">
+            <img id="woman" class="gender-icon" src="../public/images/woman.svg" alt="여자" hidden>
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+        <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>">
+            <img id="disabled-icon" src="../public/images/wheelchair.svg" alt="장애인">
+        </div>
+        <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "light" %>">
+            <img id="baby-icon" src="../public/images/baby.svg" alt="아기 거치대">
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <nav id="tags">
+        <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %>">
+            <div class="floor flex">
+                <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
+            <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+
+            </div>
+        </div>
+        
+
+        <div class="tag">
+            <div class="floor flex">
+                <div>B2<sub class="floor-ground">f</sub></div>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="bathroom flex">중앙계단 앞</div>
+            <div class="usage flex">5/6</div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+
+            </div>
+        </div>
+
+
+        <div class="tag">
+            <div class="floor flex">
+                <div>3<sub class="floor-ground">F</sub></div>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="bathroom flex">중앙계단 앞</div>
+            <div class="usage flex">2/3</div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+
+            </div>
+        </div>
+
+
+        <div class="tag">
+            <div class="floor flex">
+                <div>1<sub class="floor-ground">F</sub></div>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="bathroom flex">교장실 옆</div>
+            <div class="usage flex">0/3</div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
