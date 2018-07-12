@@ -39,6 +39,7 @@
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
+        <div class="empty"></div>
 
 
         <!-- 위아래 교체 -->
@@ -46,7 +47,7 @@
         <div id="bottom-usage" class="flex"><span id="occupied-toilet">3</span>/<span id="total-toilet">3</span></div>
         
         <!-- 위 아래 교체 -->
-        <!-- <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>"> -->
+        <!-- <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "soft" %>"> -->
         <div id="disabled" class="flex">
         
         
@@ -54,11 +55,20 @@
         </div>
 
         <!-- 위 아래 교체 -->
-        <!-- <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "light" %>"> -->
+        <!-- <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "soft" %>"> -->
         <div id="baby" class="flex">
 
             <img id="baby-icon" src="../public/images/baby.svg" alt="아기 거치대">
         </div>
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="light" class="flex <%= building.bathrooms[i].light ? "" : "soft" %>"> -->
+        <div id="light" class="flex">
+        
+            <img id="light-icon" src="../public/images/light.svg" alt="광량">
+        </div>
+
+        <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>

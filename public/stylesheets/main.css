@@ -254,11 +254,11 @@ h3:after {
 	position: fixed;
     bottom: 0;
     display: grid;
-    grid: "g e1 e1 e1"
-		  "g  u  d  b"
-          "g  u  d  b"
-          "g e2 e2 e2";
-    grid-template-columns: calc(var(--bottom-content-height) - 20px) 1fr 1fr 1fr;
+    grid: "g e1 e1 e1 e1"
+		  "g  u  d  b  l"
+          "g  u  d  b  l"
+          "g e2 e2 e2 e2";
+    grid-template-columns: calc(var(--bottom-content-height) - 20px) 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 2fr 2fr 1fr;
 	width: 100%;
 	height: var(--bottom-content-height);
@@ -282,15 +282,20 @@ h3:after {
     grid-area: d;
 }
 #disabled-icon {
-    width: calc(var(--bottom-content-height) / 3);
+    width: calc(var(--bottom-content-height) / 2);
 }
 #baby {
 	grid-area: b;
 }
 #baby-icon {
-    width: calc(var(--bottom-content-height) / 3);
+    width: calc(var(--bottom-content-height) / 2);
 }
-
+#light {
+    grid-area: l;
+}
+#light-icon {
+    width: calc(var(--bottom-content-height) / 2);
+}
 
 
 
@@ -353,7 +358,7 @@ h3:after {
     justify-content: center;
 }
 /* 공용 : 연하게 */
-.light {
+.soft {
     opacity: 0.1;
     transition: 0.2s
 }
