@@ -84,19 +84,23 @@
     <nav id="tags">
 
         <!-- 주석 해제 요망 -->
-        <!-- <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %> <%= building.bathrooms[i].light ? "light" : "" %>">
-            <div class="floor flex">
-                <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
-            </div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
-            <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
+        
+        
+        <% for (var i = 0; i < building.bathrooms.length; i++) { %>
+            <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %> <%= building.bathrooms[i].light ? "light" : "" %>">
+                <div class="floor flex">
+                    <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
+                </div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
+                <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
 
+                </div>
             </div>
-        </div> -->
+        <% } %>
         
 
         <div class="tag">
