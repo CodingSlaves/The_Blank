@@ -9,5 +9,5 @@ exports.bathroom = {
     totalToilet:Number,
     occupiedToilet:Number,
     disabled:Boolean,
-    baby:Boolean
+    baby:Boolean,
 };

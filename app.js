@@ -1,59 +1,55 @@
-'use strict';
-const koa = require("koa");
-const koa_router = require('koa-router');
-const serve = require('koa-static');
-const render = require('render.js');
-const logger = require('koa-logger');
-const app = module.exports = new koa();
-const router = module.exports = new koa_router();
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-let buildings = [];
+const app = express();
 
-app.use(serve(__dirname+'/public'));
-app.use(render);
-app.use(logger());
-//handle 404
-app.use(async(ctx, next) => {
-    try {
-        await next();
-        const status = ctx.status || 404;
-        if (status === 404) {
-            ctx.throw(404);
-        }
-    } catch (err) {
-        ctx.status = err.status || 500;
-        if (ctx.status === 404) {
-            //Your 404.view
-            await ctx.render('404',{message:"404 NOT FOUND"});
-        } else {
-            //other_error view
-            await ctx.render('other_error');
-        }
-    }
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+let buildings = new Array();
+
+app.get('/',(req,res)=>{
+    res.render('index');
+}).get('/content',(req,res)=>{
+    buildings.map(obj=>{
+   if(obj.name===req.query.search)
+       res.render('content',{building:obj});
+});res.render('404');
+}).post('/register',(req,res)=>{
+    buildings.push(req.body);
+    res.send(req.body);
+}).put('/check',(req,res)=>{
+    let building = req.body;
+    buildings.map((obj)=>{
+        if(obj.name === building.name)
+            obj.occupiedToilet = building.occupiedToilet;
+    });
+    res.send('ok');
+});
+// catch 404 and forward to error handler
+app.use((req, res, next)=>{
+    next(createError(404));
 });
 
-router.get('/',async ctx=>{
-    await ctx.render('index');
-}).get('content/:building',async ctx=>{
-    const building = ctx.params.building;
-    await buildings.map( async (obj)=>{
-        if(obj.name === building) await ctx.render('content',building);
-    });
-}).post('register',async ctx=>{
-    let building = ctx.request.body;
-    buildings.push(building);
-}).put('check',async ctx=>{
-    let building = ctx.request.body;
-    buildings.map((obj,index)=>{
-        if(obj.name === building.name){
-            buildings[index] = building;
-        }
-    });
-}).post('emergency',ctx=>{
+// error handler
+app.use((err, req, res)=>{
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
-app.listen(3000);
-
-app.use(router.routes());
-app.use(router.allowedMethods());
+module.exports = app;

@@ -7,14 +7,14 @@
     <title>빈칸</title>
 
     <!-- CSS 경로 -->
-    <link rel="stylesheet" href="../public/stylesheets/main.css">
-    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+    <!--<link rel="stylesheet" href="../public/stylesheets/main.css">-->
+     <link rel="stylesheet" href="/stylesheets/main.css">
 
 
 
     <!-- JS 경로 -->
-    <script src="../public/scripts/main.js"></script>
-    <!-- <script src="/scripts/main.js"></script> -->
+    <!--<script src="../public/scripts/main.js"></script>-->
+     <script src="/scripts/main.js"></script>
 
 
 
@@ -27,7 +27,7 @@
 
     <!-- 변환 아이콘 -->
     <button id="change-button" class="flex">
-        <img id="change-icon" src="../public/images/gender-transformation.svg">
+        <img id="change-icon" src="images/gender-transformation.svg">
     </button>
 
     <!-- 내용 정보 -->
@@ -39,7 +39,7 @@
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
-        <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+        <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building.bathrooms[i].totalToilet %></span></div>
         <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>">
             <img id="disabled-icon" src="../public/images/wheelchair.svg" alt="장애인">
         </div>
@@ -65,8 +65,8 @@
             </div>
             <div class="empty"></div>
             <div class="empty"></div>
-            <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
-            <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+            <div class="bathroom flex"><%= building.bathrooms[i].name %></div>
+            <div class="usage flex"><span class="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building.bathrooms[i].totalToilet %></span></div>
             <div class="empty"></div>
             <div class="empty"></div>
 
