@@ -79,7 +79,11 @@ onload = function () {
             } else {
                 tag.classList.add("soft");
             }
-
+            if (tag.classList.contains("light")) {
+                tag.classList.remove("soft");
+            } else {
+                tag.classList.add("soft");
+            }
 
 
         })
