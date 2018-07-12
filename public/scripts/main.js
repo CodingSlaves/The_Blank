@@ -68,18 +68,22 @@ onload = function () {
             document.querySelector("#totalToilet").textContent = totalToilet.textContent;
 
 
-            // 태크에 "disabled"이라는 클래스가 있으면 "light"클래스를 추가하고 아니면 "light"를 제거
+            // 태크에 "disabled"이라는 클래스가 있으면 "soft"클래스를 추가하고 아니면 "soft"를 제거
             if (tag.classList.contains("disabled")) {
-                tag.classList.remove("light");
+                tag.classList.remove("soft");
             } else {
-                tag.classList.add("light");
+                tag.classList.add("soft");
             }
             if (tag.classList.contains("baby")) {
-                tag.classList.remove("light");
+                tag.classList.remove("soft");
             } else {
-                tag.classList.add("light");
+                tag.classList.add("soft");
             }
-
+            if (tag.classList.contains("light")) {
+                tag.classList.remove("soft");
+            } else {
+                tag.classList.add("soft");
+            }
 
 
         })
