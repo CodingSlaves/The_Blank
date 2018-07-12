@@ -35,6 +35,12 @@ app.get('/',(req,res)=>{
             obj.occupiedToilet = building.occupiedToilet;
     });
     res.send('ok');
+}).put('/light',(req,res)=>{
+    let building = req.body;
+    buildings.map(obj=>{
+        if(obj.name === building.name)
+            obj.light = building.light;
+    })
 });
 // catch 404 and forward to error handler
 app.use((req, res, next)=>{

@@ -1,6 +1,7 @@
 exports.building ={
     name:String,
-    bathrooms:[]
+    bathrooms:[],
+    floor:[]
 };
 exports.bathroom = {
     name:String,
@@ -10,4 +11,5 @@ exports.bathroom = {
     occupiedToilet:Number,
     disabled:Boolean,
     baby:Boolean,
+    light:Boolean
 };
