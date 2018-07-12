@@ -362,3 +362,36 @@ h3:after {
     opacity: 0.1;
     transition: 0.2s
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 트레쉬갈비지 */
+#asdf {
+    width: 80%;
+    margin: auto;
+    font-size: 120%;
+}
+th {
+    border: 0;
+    border-bottom: 2px solid #e6e6d8;
+    height: 50px;
+}
+td {
+    border: 0;
+    /* border-bottom: 1px solid #e6e6d8; */
+    height: 50px;
+}
+tr:nth-child(even) {
+    background-color: #e6e6d8;
+    color: #484848;
+}

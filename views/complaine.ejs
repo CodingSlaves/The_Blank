@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>빈칸</title>
+
+    <!-- CSS 경로 -->
+    <link rel="stylesheet" href="../public/stylesheets/main.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+
+
+
+    <!-- JS 경로 -->
+    <script src="../public/scripts/main.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+
+
+
+</head>
+<body>
+    <header id="header" class="flex">
+        <!-- 여기에 사용자가 검색한 장소가 나옴 -->
+        선린인터넷고등학교 1호관
+    </header>
+
+    <!-- 변환 아이콘 -->
+    <button id="change-button" class="flex">
+        <img id="change-icon" src="../public/images/gender-transformation.svg">
+    </button>
+
+    <!-- 내용 정보 -->
+    <div id="bottom-content">
+        <div id="gender" class="flex">
+            <img id="man" class="gender-icon" src="../public/images/man.svg" alt="남자">
+            <img id="woman" class="gender-icon" src="../public/images/woman.svg" alt="여자" hidden>
+        </div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+
+        <!-- 위아래 교체 -->
+        <!-- <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building.bathrooms[i].totalToilet %></span></div> -->
+        <div id="bottom-usage" class="flex"><span id="occupied-toilet">3</span>/<span id="total-toilet">3</span></div>
+        
+        <!-- 위 아래 교체 -->
+        <!-- <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "soft" %>"> -->
+        <div id="disabled" class="flex">
+        
+        
+            <img id="disabled-icon" src="../public/images/wheelchair.svg" alt="장애인">
+        </div>
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "soft" %>"> -->
+        <div id="baby" class="flex">
+
+            <img id="baby-icon" src="../public/images/baby.svg" alt="아기 거치대">
+        </div>
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="light" class="flex <%= building.bathrooms[i].light ? "" : "soft" %>"> -->
+        <div id="light" class="flex">
+        
+            <img id="light-icon" src="../public/images/light.svg" alt="광량">
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div>
+
+
+    <table id="asdf">
+        <tr>
+            <th>시간</th>
+            <th>제목</th>
+            <th>위치</th>
+        </tr>
+        <tr>
+            <td>4:03</td>
+            <td>변기 막힘</td>
+            <td>4-4</td>
+        </tr>
+        <tr>
+            <td>3:52</td>
+            <td>변기 막힘</td>
+            <td>2-3</td>
+        </tr>
+        <tr>
+            <td>3:12</td>
+            <td>휴지 없음</td>
+            <td>6-1</td>
+        </tr>
+        <tr>
+            <td>3:01</td>
+            <td>기타</td>
+            <td>1-3</td>
+        </tr>
+        <tr>
+            <td>2:33</td>
+            <td>변기 막힘</td>
+            <td>4-2</td>
+        </tr>
+        <tr>
+            <td>2:32</td>
+            <td>기타</td>
+            <td>1-6</td>
+        </tr>
+        <tr>
+            <td>2:15</td>
+            <td>위생</td>
+            <td>2-2</td>
+        </tr>
+        <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+            <td>asdf</td>
+        </tr>
+        <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+            <td>asdf</td>
+        </tr>
+        <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+            <td>asdf</td>
+        </tr>
+    </table>
+
+
+
+
+
+    
+</body>
+</html>
