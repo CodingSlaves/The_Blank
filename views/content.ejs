@@ -39,13 +39,36 @@
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
-        <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
-        <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "light" %>">
+        <div class="empty"></div>
+
+
+        <!-- 위아래 교체 -->
+        <!-- <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div> -->
+        <div id="bottom-usage" class="flex"><span id="occupied-toilet">3</span>/<span id="total-toilet">3</span></div>
+        
+        <!-- 위 아래 교체 -->
+        <!-- <div id="disabled" class="flex <%= building.bathrooms[i].disabled ? "" : "soft" %>"> -->
+        <div id="disabled" class="flex">
+        
+        
             <img id="disabled-icon" src="../public/images/wheelchair.svg" alt="장애인">
         </div>
-        <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "light" %>">
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="baby" class="flex <%= building.bathrooms[i].baby ? "" : "soft" %>"> -->
+        <div id="baby" class="flex">
+
             <img id="baby-icon" src="../public/images/baby.svg" alt="아기 거치대">
         </div>
+
+        <!-- 위 아래 교체 -->
+        <!-- <div id="light" class="flex <%= building.bathrooms[i].light ? "" : "soft" %>"> -->
+        <div id="light" class="flex">
+        
+            <img id="light-icon" src="../public/images/light.svg" alt="광량">
+        </div>
+
+        <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
@@ -59,19 +82,24 @@
 
 
     <nav id="tags">
-        <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %>">
-            <div class="floor flex">
-                <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
-            </div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
-            <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
 
+        <!-- 주석 해제 요망 -->
+        
+        
+        <% for (var i = 0; i < building.bathrooms.length; i++) { %>
+            <div class="tag <%= building.bathrooms.gender %> <%= building.bathrooms.disabled ? "disabled" : "" %> <%= building.bathrooms[i].baby ? "baby" : "" %> <%= building.bathrooms[i].light ? "light" : "" %>">
+                <div class="floor flex">
+                    <div><%= building.bathrooms[i].floor < 0 ? "B" : "" %><%= Math.abs(building.bathrooms[i].floor) %><sub class="floor-ground">f</sub></div>
+                </div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
+                <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                </div>
             </div>
-        </div>
+        <% } %>
         
 
         <div class="tag">
