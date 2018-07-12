@@ -43,7 +43,7 @@
 
 
         <!-- 위아래 교체 -->
-        <!-- <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div> -->
+        <!-- <div id="bottom-usage" class="flex"><span id="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span id="total-toilet"><% building.bathrooms[i].totalToilet %></span></div> -->
         <div id="bottom-usage" class="flex"><span id="occupied-toilet">3</span>/<span id="total-toilet">3</span></div>
         
         <!-- 위 아래 교체 -->
@@ -93,8 +93,8 @@
                 </div>
                 <div class="empty"></div>
                 <div class="empty"></div>
-                <div class="bathroom flex"><%= building[i].bathrooms[i].name %></div>
-                <div class="usage flex"><span class="occupied-toilet"><%= building[i].bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building[i].bathrooms[i].totalToilet %></span></div>
+                <div class="bathroom flex"><%= building.bathrooms[i].name %></div>
+                <div class="usage flex"><span class="occupied-toilet"><%= building.bathrooms[i].occupiedToilet %></span>/<span class="total-toilet"><% building.bathrooms[i].totalToilet %></span></div>
                 <div class="empty"></div>
                 <div class="empty"></div>
                 </div>
